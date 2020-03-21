@@ -1,7 +1,5 @@
 package com.user.wongi5.model;
 
-import java.util.Arrays;
-
 public class Item {
 	
 	private int itemId;

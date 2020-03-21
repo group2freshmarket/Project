@@ -5,8 +5,6 @@ import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.servlet.http.HttpSession;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -41,7 +39,7 @@ public class ItemController {
 		List<Item> itemList=null;
 		itemList=itemDao.getItems();
 		
-		List<String> imageList = new ArrayList();
+		List<String> imageList = new ArrayList<String>();
 		for(Item i:itemList)
 		{
 			byte[] encodeBase64 =   Base64.encodeBase64(i.getItemImage());
@@ -108,7 +106,7 @@ public class ItemController {
 		ModelAndView mv=new ModelAndView("items");
 		try {
 			
-			List itemList=(List) itemDao.getItems();
+			List<?> itemList=(List<?>) itemDao.getItems();
 			mv.addObject("items",itemList);
 		}catch (Exception e) {
 			System.out.println(e.getMessage());

@@ -11,10 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.user.wongi5.dao.AuthDao;
-import com.user.wongi5.dao.StudentDao;
 import com.user.wongi5.model.LoginInfo;
-import com.user.wongi5.model.Student;
-import com.user.wongi5.model.User;
 
 @Controller
 @SessionAttributes("user_email")

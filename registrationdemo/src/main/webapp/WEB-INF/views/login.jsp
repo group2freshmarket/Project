@@ -22,11 +22,12 @@
 				<div class="panel-body">
 					<form:form action="login" cssClass="form-horizontal"
 						method="post" modelAttribute="loginInfo">
-							<div class="form-group">
+						<div class="form-group">
 							<label for="userType" class="col-md-3 control-label">userType</label>
 							<div class="col-md-9">
 								<form:input path="userType" cssClass="form-control" />
 							</div>
+						</div>
 						<div class="form-group">
 							<label for="email" class="col-md-3 control-label">email</label>
 							<div class="col-md-9">

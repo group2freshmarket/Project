@@ -34,7 +34,7 @@
 				</div>
 			</div>
 			<h2 class="text-center">Items List</h2>
-			<table width="100%" border="1">
+			<table border="1">
 			<thead><tr>
 			<th>Item Id</th>
 			<th>Item Name</th>

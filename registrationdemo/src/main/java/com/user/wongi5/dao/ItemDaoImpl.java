@@ -2,20 +2,16 @@ package com.user.wongi5.dao;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.jdbc.core.namedparam.SqlParameterSource;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
 import com.user.wongi5.model.Item;
-import com.user.wongi5.model.User;
 
 @Repository
 public class ItemDaoImpl implements ItemDao{
@@ -106,7 +102,7 @@ NamedParameterJdbcTemplate jdbcTemplate;
 	public List<Item> getItems() {
 		String sql="SELECT * FROM ITEM";
 		List<Item> itemList=null;
-		Map<String, Object> params = new HashMap<String, Object>();
+		//Map<String, Object> params = new HashMap<String, Object>();
 		System.out.println("Fetching items......!!!");
 		itemList=jdbcTemplate.query(sql,new ItemMapper());
 		//System.out.println("item counts : "+itemList.size());
@@ -118,7 +114,7 @@ NamedParameterJdbcTemplate jdbcTemplate;
 		return null;
 	}
 	
-	private static final class ItemMapper implements RowMapper{
+	private static final class ItemMapper implements RowMapper<Item>{
 
 		public Item mapRow(ResultSet rs, int rowNum) throws SQLException {
 		

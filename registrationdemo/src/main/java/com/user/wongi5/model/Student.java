@@ -2,9 +2,6 @@ package com.user.wongi5.model;
 
 import java.util.List;
 
-import org.springframework.context.annotation.Scope;
-import org.springframework.stereotype.Component;
-
 public class Student {
 	private String email;
 	private String name;

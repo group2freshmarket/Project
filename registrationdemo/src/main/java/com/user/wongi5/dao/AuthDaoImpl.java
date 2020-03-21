@@ -11,7 +11,6 @@ import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.jdbc.core.namedparam.SqlParameterSource;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
 import com.user.wongi5.model.User;
@@ -63,8 +62,10 @@ public class AuthDaoImpl implements AuthDao {
         params.put("userType", userType);
         System.out.println("email  : "+email);
         System.out.println("userType  : "+userType);
-			user=(User)jdbcTemplate.queryForObject(sql, params,new UserMapper());
-		if(user!=null)
+		
+        user=(User)jdbcTemplate.queryForObject(sql, params,new UserMapper());
+		
+        if(user!=null)
 		{
 			System.out.println("Name : "+user.getName());
 			return true;
@@ -72,7 +73,7 @@ public class AuthDaoImpl implements AuthDao {
 		return false;
 	}
 	
-	private static final class UserMapper implements RowMapper{
+	private static final class UserMapper implements RowMapper<Object>{
 
 		public User mapRow(ResultSet rs, int rowNum) throws SQLException {
 		
