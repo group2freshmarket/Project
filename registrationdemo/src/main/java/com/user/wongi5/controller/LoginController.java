@@ -12,9 +12,10 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.user.wongi5.dao.AuthDao;
 import com.user.wongi5.model.LoginInfo;
+import com.user.wongi5.model.User;
 
 @Controller
-@SessionAttributes("user_email")
+@SessionAttributes("User")
 public class LoginController {
 	
 	@Autowired
@@ -38,10 +39,9 @@ public class LoginController {
 	 */
 	@GetMapping("/login")
 	public String login(HttpSession session) {
-	    String user_email = (String) session.getAttribute("user_email");
+	    User user = (User) session.getAttribute("email");
 
-		System.out.println("Entering.."+user_email);
-	    if(user_email != null) {
+	    if(user != null) {
 	    	return "login-success";
 	    }
 	    return "login";

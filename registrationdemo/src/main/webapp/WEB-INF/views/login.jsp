@@ -2,14 +2,12 @@
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ page isELIgnored="false"%>
 <!DOCTYPE html>
 <html>
-<head>
+<head><%@ page isELIgnored="false"%>
 <meta charset="ISO-8859-1">
 <title>LOGIN HERE</title>
-<link href="<c:url value="/resources/css/bootstrap.min.css" />"
-	rel="stylesheet">
+<link href="<c:url value="/resources/css/bootstrap.min.css" />" rel="stylesheet">
 <script src="<c:url value="/resources/js/jquery-1.11.1.min.js" />"></script>
 <script src="<c:url value="/resources/js/bootstrap.min.js" />"></script>
 
@@ -20,8 +18,7 @@
 			<h2 class="text-center">LOGIN : ${message}</h2>
 			<div class="panel panel-info">
 				<div class="panel-body">
-					<form:form action="login" cssClass="form-horizontal"
-						method="post" modelAttribute="loginInfo">
+					<form:form action="login" cssClass="form-horizontal" method="post" modelAttribute="loginInfo">
 						<div class="form-group">
 							<label for="userType" class="col-md-3 control-label">userType</label>
 							<div class="col-md-9">
@@ -47,7 +44,7 @@
 								<form:button cssClass="btn btn-primary">Submit</form:button>
 							</div>
 						</div>
-      <a href="showSignUpForm">New Customers Sign Up First</a>
+      					<a href="showSignUpForm">New Customers Sign Up First</a>
 					</form:form>
 				</div>
 			</div>
