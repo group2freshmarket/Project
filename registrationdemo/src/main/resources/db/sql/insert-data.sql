@@ -1,6 +1,6 @@
 
-INSERT INTO USER VALUES ('rimmi@gmail.com','raminder','pass123','customer');
-INSERT INTO USER VALUES ('admin_user','admin_name','rimmi','admin');
+INSERT INTO User VALUES ('rimmi@gmail.com','raminder','pass123','customer');
+INSERT INTO User VALUES ('admin_user','admin_name','rimmi','admin');
 
 --INSERT INTO users VALUES (1, 'mkyong', 'mkyong@gmail.com');
 --INSERT INTO users VALUES (2, 'alex', 'alex@yahoo.com');
